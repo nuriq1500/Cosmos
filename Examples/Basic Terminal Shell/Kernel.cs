@@ -11,7 +11,7 @@ namespace BasicTerminalShell
 
         protected override void BeforeRun()
         {
-            Console.WriteLine("Cosmos booted successfully. Type a command to get it executed!");
+            Console.WriteLine("Tea booted successfully. Type a command to get it executed!");
             _Prompt = "";
         }
 
@@ -22,21 +22,21 @@ namespace BasicTerminalShell
             string[] words = input.Split(' ');
             switch (words[0])
             {
-                case "cpu":
+                case "mycpu":
                     Console.WriteLine($"Vendor: {CPU.GetCPUVendorName()}, Name: {CPU.GetCPUBrandString()}, Frequency: {CPU.GetCPUCycleSpeed()}");
                     break;
-                case "shutdown":
+                case "trgclose":
                     Sys.Power.Shutdown(); // shutdown is supported
                     break;
-                case "restart":
+                case "reboot":
                     Sys.Power.Reboot(); // restart too
                     break;
-                case "help":
+                case "cphelp":
                     // console methods are plugged
-                    Console.WriteLine("cpu      - prints info about current cpu");
-                    Console.WriteLine("shutdown - shuts down current computer");
-                    Console.WriteLine("restart  - restarts current computer");
-                    Console.WriteLine("help     - shows this help menu");
+                    Console.WriteLine("mycpu      - prints info about current cpu");
+                    Console.WriteLine("trgclose - shuts down current computer");
+                    Console.WriteLine("reboot  - restarts current computer");
+                    Console.WriteLine("cphelp     - shows this help menu");
                     break;
                 default:
                     // switch operator works great
